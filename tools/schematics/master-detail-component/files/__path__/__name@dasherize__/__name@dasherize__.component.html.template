@@ -1,0 +1,13 @@
+<section fxLayout="column" class="parentHeight">
+  <header title="<%= classify(name) %>" >
+   <mat-icon   ="approval"></mat-icon>
+  </page-header>
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-between stretch">
+    <mat-card    fxFlex>
+      <avc-<%= dasherize(name) %>-grid></avc-<%= dasherize(name) %>-grid>
+    </mat-card>
+    <mat-card   >
+      <avc-<%= dasherize(name) %>-form></avc-<%= dasherize(name) %>-form>
+    </mat-card>
+  </div>
+</section>

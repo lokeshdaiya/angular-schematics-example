@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "form-component",
+  "description": "Generate a simple reactive form component",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Form component name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the name of the new form?"
+    },
+    "project": {
+      "type": "string",
+      "description": "Target project",
+      "x-prompt": "In which project should the component be generated?"
+    },
+    "fieldNames": {
+      "type": "string",
+      "default": "name,code",
+      "description": "Comma-separated list of initial fields",
+      "x-prompt": "Which fields would you like to have? (comma-separated list)"
+    }
+  },
+  "required": ["name", "project", "fieldNames"]
+}

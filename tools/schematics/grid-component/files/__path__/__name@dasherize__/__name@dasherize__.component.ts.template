@@ -1,0 +1,26 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+
+@Component({
+  selector: 'avc-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html'
+})
+export class <%= classify(name) %>Component implements OnInit {
+  tableData: any[] = [
+    <% for (let j = 0; j < 5; ++j) { %>
+    { <% for (let i = 0; i < fieldNamesList.length; ++i) { %><%= camelize(fieldNamesList[i]) %>: 'value<%= i %>'<% if (i < fieldNamesList.length - 1) { %>, <% } %><% } %> }<% if (j < 5 - 1) { %>,<% } %>
+    <% } %>
+  ];
+
+  displayedColumns = [<% for (let i = 0; i < fieldNamesList.length; ++i) { %>'<%= camelize(fieldNamesList[i]) %>'<% if (i < fieldNamesList.length - 1) { %>, <% } %><% } %>];
+  dataSource = new MatTableDataSource(this.tableData);
+
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.dataSource.sort = this.sort;
+  }
+}

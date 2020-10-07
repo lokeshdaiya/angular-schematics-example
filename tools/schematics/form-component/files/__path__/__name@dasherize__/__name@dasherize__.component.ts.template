@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'avc-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html'
+})
+export class <%= classify(name) %>Component implements OnInit {
+  form = new FormGroup({
+    <% for (let i = 0; i < fieldNamesList.length; ++i) { %>
+    <%= camelize(fieldNamesList[i]) %>: new FormControl('')<% if (i < fieldNamesList.length - 1) { %>,<% } %><% } %>
+  });
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  submit() {
+    console.log(JSON.stringify(this.form.value));
+  }
+}

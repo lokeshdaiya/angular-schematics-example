@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "master-detail-component",
+  "description": "Generate a set of components forming a master-detail view",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Component name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the name of the new component?"
+    },
+    "project": {
+      "type": "string",
+      "description": "Target project",
+      "x-prompt": "In which project should the component be generated?"
+    },
+    "fieldNames": {
+      "type": "string",
+      "default": "name,code",
+      "description": "Comma-separated list of initial fields",
+      "x-prompt": "Which fields would you like to have? (comma-separated list)"
+    },
+    "theme": {
+      "type": "boolean",
+      "description": "Flag to indicate if component theme file is created.",
+      "default": false
+    }
+  },
+  "required": ["name", "project"]
+}

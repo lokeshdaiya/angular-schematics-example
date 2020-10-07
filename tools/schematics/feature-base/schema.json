@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "feature-base",
+  "description": "Script external schematics to generate files for a feature",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Feature name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the name of the new feature?"
+    },
+    "entityName": {
+      "type": "string",
+      "description": "Name of interface representing the feature's central entity",
+      "x-prompt": "What's the main entity this feature revolves around?"
+    }
+  },
+  "required": ["name", "entityName"]
+}

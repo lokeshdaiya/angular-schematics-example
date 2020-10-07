@@ -1,0 +1,9 @@
+<form [formGroup]="form" fxLayout="column">
+  <% for (let i = 0; i < fieldNamesList.length; ++i) { %>
+  <mat-form-field   >
+    <mat-label><%= capitalize(fieldNamesList[i]) %></mat-label>
+    <input matInput    formControlName="<%= camelize(fieldNamesList[i]) %>" />
+  </mat-form-field>
+  <% } %>
+  <button mat-button color="primary"    (click)="submit()">Submit</button>
+</form>

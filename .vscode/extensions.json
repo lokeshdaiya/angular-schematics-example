@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "angular.ng-template",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "esbenp.prettier-vscode",
+    "natewallace.angular2-inline",
+    "msjsdiag.debugger-for-chrome",
+    "EditorConfig.EditorConfig",
+    "stylelint.vscode-stylelint",
+    "ddot.vscode-ast"
+  ]
+}

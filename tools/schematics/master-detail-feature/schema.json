@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "master-detail-feature",
+  "description": "Generate a feature library with an (almost) complete master-detail component",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Feature name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What's the name of the new feature?"
+    },
+    "entityName": {
+      "type": "string",
+      "description": "Name of interface representing the feature's central entity",
+      "x-prompt": "What's the main entity this feature revolves around?"
+    },
+    "fieldNames": {
+      "type": "string",
+      "default": "name,code",
+      "description": "Comma-separated list of initial fields",
+      "x-prompt": "Which fields would you like to have? (comma-separated list)"
+    },
+    "theme": {
+      "type": "boolean",
+      "description": "Flag to indicate if component theme file is created.",
+      "default": false
+    }
+  },
+  "required": ["name", "entityName"]
+}
